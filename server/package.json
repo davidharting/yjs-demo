@@ -1,0 +1,11 @@
+{
+  "name": "yjs-demo-server",
+  "version": "1.0.0",
+  "description": "Start up a yjs websocket server",
+  "scripts": {
+    "start": "HOST=localhost PORT=12345 npx y-websocket"
+  },
+  "dependencies": {
+    "y-websocket": "^1.5.0"
+  }
+}
