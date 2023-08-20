@@ -1,5 +1,8 @@
 import { syncedStore, getYjsDoc } from "@syncedstore/core";
 import { IndexeddbPersistence } from "y-indexeddb";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { WebsocketProvider } from "y-websocket";
 
 export const store = syncedStore({ activeEditor: "text" });
 
@@ -16,3 +19,4 @@ const DOC_NAME = "yjsDemoState";
 const ydoc = getYjsDoc(store);
 
 new IndexeddbPersistence(DOC_NAME, ydoc);
+new WebsocketProvider("ws://localhost:12345", DOC_NAME, ydoc);
