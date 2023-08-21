@@ -30,6 +30,7 @@ function App() {
 
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div className="editor-container" style={{ flex: "48" }}>
+          <h2>Edit File</h2>
           <Editor
             language="markdown"
             height="75vh"
@@ -43,6 +44,7 @@ function App() {
         <div style={{ flex: "4" }} />
 
         <div style={{ height: "75vh", flex: "48" }}>
+          <h2>Preview</h2>
           <ReactMarkdown>{state.activeEditor.toString()}</ReactMarkdown>
         </div>
       </div>
