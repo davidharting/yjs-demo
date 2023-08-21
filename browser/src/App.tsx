@@ -28,19 +28,23 @@ function App() {
     <main>
       <h1>y-js demo</h1>
 
-      <div className="editor-container">
-        <Editor
-          language="markdown"
-          height="50vh"
-          value={state.activeEditor.toString()}
-          onChange={(_value, event) => {
-            applyMonacoChangeToStore(event, state.activeEditor);
-          }}
-        />
-      </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="editor-container" style={{ flex: "48" }}>
+          <Editor
+            language="markdown"
+            height="75vh"
+            value={state.activeEditor.toString()}
+            onChange={(_value, event) => {
+              applyMonacoChangeToStore(event, state.activeEditor);
+            }}
+          />
+        </div>
 
-      <div style={{ height: "50vh" }}>
-        <ReactMarkdown>{state.activeEditor.toString()}</ReactMarkdown>
+        <div style={{ flex: "4" }} />
+
+        <div style={{ height: "75vh", flex: "48" }}>
+          <ReactMarkdown>{state.activeEditor.toString()}</ReactMarkdown>
+        </div>
       </div>
     </main>
   );
