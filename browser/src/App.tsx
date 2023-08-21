@@ -10,8 +10,6 @@ const applyMonacoChangeToStore = (
   event: editor.IModelContentChangedEvent,
   doc: y.Text
 ): void => {
-  // TODO: Handle Undo
-  // TODO: Handle Redo
   event.changes.forEach((change) => {
     if (change.text === "") {
       doc.delete(change.rangeOffset, change.rangeLength);
