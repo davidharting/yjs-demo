@@ -4,7 +4,7 @@
   "type": "commonjs",
   "description": "Start up a yjs websocket server",
   "scripts": {
-    "start:server": "HOST=0.0.0.0 PORT=12345 YPERSISTENCE=./database npx y-websocket",
+    "start:server": "HOST=0.0.0.0 PORT=12345 npx y-websocket",
     "start:script": "node ./script.js",
     "start": "concurrently npm:start:*"
   },
