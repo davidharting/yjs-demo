@@ -1,11 +1,16 @@
 {
   "name": "yjs-demo-server",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "Start up a yjs websocket server",
   "scripts": {
-    "start": "HOST=localhost PORT=12345 YPERSISTENCE=./database npx y-websocket"
+    "start:server": "HOST=localhost PORT=12345 YPERSISTENCE=./database npx y-websocket",
+    "start:script": "node ./script.js",
+    "start": "concurrently npm:start:*"
   },
   "dependencies": {
+    "concurrently": "^8.2.0",
+    "ws": "^8.13.0",
     "y-websocket": "^1.5.0"
   }
 }

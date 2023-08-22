@@ -6,6 +6,7 @@ import { WebsocketProvider } from "y-websocket";
 
 export const store = syncedStore({
   activeEditor: "text",
+  chartData: [] as Array<number>,
 });
 
 /**
