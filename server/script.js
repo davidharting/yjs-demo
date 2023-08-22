@@ -4,13 +4,14 @@ const { WebsocketProvider } = require("y-websocket");
 async function main() {
   const DOC_NAME = "yjsDemoState";
 
+  const serverUrl =
+    process.env.NODE_ENV === "production"
+      ? "wss://yjs-demo.fly.dev"
+      : "ws://localhost:12345";
   const doc = new Y.Doc();
-  const wsProvider = new WebsocketProvider(
-    "ws://localhost:12345",
-    DOC_NAME,
-    doc,
-    { WebSocketPolyfill: require("ws") }
-  );
+  const wsProvider = new WebsocketProvider(serverUrl, DOC_NAME, doc, {
+    WebSocketPolyfill: require("ws"),
+  });
 
   wsProvider.on("status", (event) => {
     console.log(event.status);
