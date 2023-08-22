@@ -22,4 +22,8 @@ const DOC_NAME = "yjsDemoState";
 const ydoc = getYjsDoc(store);
 
 new IndexeddbPersistence(DOC_NAME, ydoc);
-new WebsocketProvider("ws://localhost:12345", DOC_NAME, ydoc);
+
+const serverUrl = import.meta.env.PROD
+  ? "wss://yjs-demo.fly.dev"
+  : "ws://localhost:12345";
+new WebsocketProvider(serverUrl, DOC_NAME, ydoc);
