@@ -15,7 +15,6 @@
     "@syncedstore/react": "^0.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.7",
     "y-indexeddb": "^9.0.11",
     "y-websocket": "^1.5.0",
     "yjs": "^13.6.7"

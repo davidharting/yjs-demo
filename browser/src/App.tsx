@@ -1,8 +1,8 @@
 import Editor from "@monaco-editor/react";
 import { useSyncedStore } from "@syncedstore/react";
 import type { editor } from "monaco-editor";
-import ReactMarkdown from "react-markdown";
 import y from "yjs";
+import type { ChangeEvent } from "react";
 
 import { store } from "./store";
 
@@ -26,25 +26,17 @@ function App() {
     <main>
       <h1>y-js demo</h1>
 
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div className="editor-container" style={{ flex: "48" }}>
-          <h2>Edit File</h2>
-          <Editor
-            language="markdown"
-            height="75vh"
-            value={state.activeEditor.toString()}
-            onChange={(_value, event) => {
-              applyMonacoChangeToStore(event, state.activeEditor);
-            }}
-          />
-        </div>
-
-        <div style={{ flex: "4" }} />
-
-        <div style={{ height: "75vh", flex: "48" }}>
-          <h2>Preview</h2>
-          <ReactMarkdown>{state.activeEditor.toString()}</ReactMarkdown>
-        </div>
+      <div className="editor-container" style={{ flex: "48" }}>
+        <h2>Edit this file</h2>
+        <p>It is automatically kept in sync with other users.</p>
+        <Editor
+          language="markdown"
+          height="75vh"
+          value={state.activeEditor.toString()}
+          onChange={(_value, event) => {
+            applyMonacoChangeToStore(event, state.activeEditor);
+          }}
+        />
       </div>
     </main>
   );
