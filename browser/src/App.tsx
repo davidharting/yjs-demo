@@ -2,7 +2,6 @@ import Editor from "@monaco-editor/react";
 import { useSyncedStore } from "@syncedstore/react";
 import type { editor } from "monaco-editor";
 import y from "yjs";
-import type { ChangeEvent } from "react";
 
 import { store } from "./store";
 
