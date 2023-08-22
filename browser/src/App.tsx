@@ -28,10 +28,8 @@ function App() {
         </fieldset>
       </form>
 
-      <div>
-        {demo === "monaco" && <MonacoDemo />}
-        {demo === "chart" && <ChartDemo />}
-      </div>
+      {demo === "monaco" && <MonacoDemo />}
+      {demo === "chart" && <ChartDemo />}
     </main>
   );
 }
