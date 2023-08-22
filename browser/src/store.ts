@@ -4,11 +4,8 @@ import { IndexeddbPersistence } from "y-indexeddb";
 // @ts-ignore
 import { WebsocketProvider } from "y-websocket";
 
-type Controls = { layout?: "horizontal" | "vertical" };
-
 export const store = syncedStore({
   activeEditor: "text",
-  controls: {} as Controls,
 });
 
 /**
