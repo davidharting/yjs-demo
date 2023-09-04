@@ -15,7 +15,7 @@ export const ChartDemo: FC = () => {
   });
   return (
     <div>
-      <h2>Chart based on live server data</h2>
+      <h1 className="text-4xl">Chart based on live server data</h1>
       <div style={{ height: "650px" }}>
         <Chart
           options={{
