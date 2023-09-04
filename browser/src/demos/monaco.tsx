@@ -11,11 +11,14 @@ export const MonacoDemo: FC = () => {
 
   return (
     <div>
-      <h2>Edit this file</h2>
-      <p>It is automatically kept in sync with other users.</p>
+      <h1 className="text-4xl">Live text editor</h1>
+      <p className="text-base">
+        It is automatically kept in sync with other users.
+      </p>
       <Editor
+        className="mt-8"
         language="markdown"
-        height="75vh"
+        height="80vh"
         value={state.activeEditor.toString()}
         onChange={(_value, event) => {
           applyMonacoChangeToStore(event, state.activeEditor);
