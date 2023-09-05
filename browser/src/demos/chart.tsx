@@ -1,7 +1,7 @@
 import { useSyncedStore } from "@syncedstore/react";
 import CountUp from "react-countup";
 import type { FC } from "react";
-import { Chart } from "react-charts";
+import { LineChart, Line } from "recharts";
 
 import { store } from "../store";
 
@@ -33,15 +33,9 @@ export const ChartDemo: FC = () => {
           </progress>
         </div>
 
-        <div style={{ height: "650px" }}>
-          <Chart
-            options={{
-              data: [{ label: "Series 1", data }],
-              primaryAxis: { getValue: (d) => d.x },
-              secondaryAxes: [{ getValue: (d) => d.y }],
-            }}
-          />
-        </div>
+        <LineChart width={600} height={600} data={data}>
+          <Line type="monotone" stroke="#8884d8" dataKey="y" />
+        </LineChart>
       </div>
     </div>
   );
