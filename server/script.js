@@ -29,9 +29,14 @@ async function main() {
           if (chartData.length > 25) {
             chartData.delete(0);
           }
-          chartData.insert(chartData.length - 1, [
-            Math.floor(Math.random() * 100),
-          ]);
+          if (chartData.length === 0) {
+            chartData.insert(0, [Math.floor(Math.random() * 100)]);
+          } else {
+            const latest = chartData.get(chartData.length - 1);
+            const sign = Math.random() > 0.5 ? 1 : -1;
+            const delta = Math.floor(Math.random() * 10);
+            chartData.insert(chartData.length - 1, [latest + sign * delta]);
+          }
         });
         resolve();
       }, 1000);
